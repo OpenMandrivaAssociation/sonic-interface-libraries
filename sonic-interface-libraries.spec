@@ -7,7 +7,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name: sonic-interface-libraries
-Version: 6.6.3
+Version: 6.6.3.1
 Release: %{?git:0.%{git}.}1
 URL: https://github.com/Sonic-DE/%name
 

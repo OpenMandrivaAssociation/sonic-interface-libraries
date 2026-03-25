@@ -8,7 +8,7 @@
 
 Name: sonic-interface-libraries
 Version: 6.6.3.1
-Release: %{?git:0.%{git}.}1
+Release: %{?git:0.%{git}.}2
 URL: https://github.com/Sonic-DE/%name
 
 # %if 0%{?git:1}
@@ -21,7 +21,7 @@ Summary: Foundational libraries, components, and tools of the SonicDE workspaces
 
 License: CC0-1.0 LGPL-2.0+ LGPL-2.1 LGPL-3.0
 Group: System/Libraries
-BuildRequires: cmake
+
 BuildRequires: cmake(ECM)
 BuildRequires: python
 BuildRequires: cmake(Qt6DBusTools)
@@ -47,12 +47,21 @@ BuildRequires: cmake(KF6Archive)
 BuildRequires: cmake(KF6Config)
 BuildRequires: cmake(KF6ConfigWidgets)
 BuildRequires: cmake(KF6CoreAddons)
-BuildRequires: cmake(KF6GlobalAccel)
+
+# pending rewrite
+# BuildRequires: cmake(KF6GlobalAccel)
+BuildRequires: %{_lib}SonicDEKeybindDaemon-devel
+
 BuildRequires: cmake(KF6GuiAddons)
 BuildRequires: cmake(KF6I18n)
 BuildRequires: cmake(KF6IconThemes)
-BuildRequires: cmake(KF6KIO)
-BuildRequires: cmake(KF6WindowSystem)
+
+# pending rewrite
+# BuildRequires: cmake(KF6KIO)
+# BuildRequires: cmake(KF6WindowSystem)
+BuildRequires: %{_lib}SonicFrameworksIO-devel
+BuildRequires: %{_lib}SonicFrameworksWindowSystem-devel
+
 BuildRequires: cmake(KF6XmlGui)
 BuildRequires: cmake(KF6Notifications)
 BuildRequires: cmake(KF6Package)

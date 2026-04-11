@@ -7,14 +7,14 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name: sonic-interface-libraries
-Version: 6.6.3.1
-Release: %{?git:0.%{git}.}2
+Version: 6.6.4
+Release: %{?git:0.%{git}.}1
 URL: https://github.com/Sonic-DE/%name
 
 # %if 0%{?git:1}
 # Source0: https://invent.kde.org/plasma/libplasma/-/archive/%{gitbranch}/libplasma-%{gitbranchd}.tar.bz2#/libplasma-%{git}.tar.bz2
 # %else
-Source0: %url/archive/refs/tags/%{version}.tar.gz#/%name-%version.tar.gz
+Source0: %url/archive/%version/%name-%version.tar.gz
 # %endif
 
 Summary: Foundational libraries, components, and tools of the SonicDE workspaces
@@ -42,7 +42,11 @@ BuildRequires: cmake(Qt6Svg)
 BuildRequires: cmake(Qt6QuickTest)
 BuildRequires: cmake(Qt6QuickControls2)
 BuildRequires: cmake(KF6Kirigami2)
-BuildRequires: cmake(PlasmaActivities)
+
+# pending rename
+# BuildRequires: cmake(PlasmaActivities)
+BuildRequires: %{_lib}SonicDEActivities-devel
+
 BuildRequires: cmake(KF6Archive)
 BuildRequires: cmake(KF6Config)
 BuildRequires: cmake(KF6ConfigWidgets)

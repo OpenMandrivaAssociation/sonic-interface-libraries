@@ -41,7 +41,10 @@ BuildRequires: cmake(Qt6)
 BuildRequires: cmake(Qt6Svg)
 BuildRequires: cmake(Qt6QuickTest)
 BuildRequires: cmake(Qt6QuickControls2)
-BuildRequires: cmake(KF6Kirigami2)
+
+# pending rename
+# BuildRequires: cmake(KF6Kirigami2)
+BuildRequires: %{_lib}SonicFrameworksQuickUI-devel
 
 # pending rename
 # BuildRequires: cmake(PlasmaActivities)
@@ -50,7 +53,10 @@ BuildRequires: %{_lib}SonicDEActivities-devel
 BuildRequires: cmake(KF6Archive)
 BuildRequires: cmake(KF6Config)
 BuildRequires: cmake(KF6ConfigWidgets)
-BuildRequires: cmake(KF6CoreAddons)
+
+# pending rename
+# BuildRequires: cmake(KF6CoreAddons)
+BuildRequires: %{_lib}SonicFrameworksCoreAddons-devel
 
 # pending rewrite
 # BuildRequires: cmake(KF6GlobalAccel)

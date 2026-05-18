@@ -129,6 +129,8 @@ find %{buildroot}%{_datadir}/locale -name "*.js" |while read r; do
     echo "%%lang($L) %%{_datadir}/locale/$L/LC_SCRIPTS/libplasma6/$(basename $r)" >>%{name}.lang
 done
 
+rm -rf %{buildroot}/%{_libdir}/cmake
+
 %files -f %{name}.lang
 %{_datadir}/qlogging-categories6/plasma-framework.categories
 %{_datadir}/qlogging-categories6/plasma-framework.renamecategories
@@ -136,8 +138,11 @@ done
 %files -n %{devname}
 %{_includedir}/Plasma
 %{_includedir}/PlasmaQuick
-%{_libdir}/cmake/Plasma
-%{_libdir}/cmake/PlasmaQuick
+
+# pending rename
+# %{_libdir}/cmake/Plasma
+# %{_libdir}/cmake/PlasmaQuick
+
 %{_datadir}/kdevappwizard/templates/*
 
 %files -n %{libname}

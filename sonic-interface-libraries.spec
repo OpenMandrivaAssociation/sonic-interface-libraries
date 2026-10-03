@@ -85,6 +85,8 @@ Requires: %{libname} = %{EVRD}
 Requires: sonic-framework-common = %{EVRD}
 
 Conflicts:      libplasma
+# Docs have been removed upstream in 6.7.0
+Obsoletes:	%{name}-doc < %{EVRD}
 #patchlist
 
 %description
@@ -114,13 +116,6 @@ Group: System/Libraries
 Conflicts: plasma-framework-common
 
 %description -n sonic-framework-common
-%summary
-
-%package doc
-Summary: API documentation for %{name} in Qt Assistant format
-Group: Development/C++
-
-%description doc
 %summary
 
 %install -a
@@ -155,6 +150,3 @@ done
 %files -n sonic-framework-common
 %dir %{_datadir}/plasma
 %{_datadir}/plasma/desktoptheme
-
-%files doc
-%{_qtdir}/doc/Plasma.*
